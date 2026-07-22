@@ -18,7 +18,7 @@
 3. Le lint remontait un avertissement dans `frontend/src/components/Header.tsx`.
 
 ## Corrections appliquées
-- Alignement des dépendances React/TypeScript/Lucide.
+- Alignement des dépendances React/TypeScript/Lucide, avec mise à niveau de `lucide-react` vers une version compatible React 19.
 - Suppression de la dépendance Supabase inutilisée et invalide.
 - Ajout de `eslint-plugin-react-refresh` compatible avec la version d'ESLint présente.
 - Ajout de `qrcode` et `@types/qrcode`.

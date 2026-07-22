@@ -15,7 +15,6 @@ const Packages = () => {
   const [filterStatus, setFilterStatus] = useState<string>('')
   const [isFormOpen, setIsFormOpen] = useState(false)
   const [editingPackage, setEditingPackage] = useState<Package | null>(null)
-  const [, setSelectedPackage] = useState<Package | null>(null)
 
   // Fetch packages with filters
   const { data: packages = [], isLoading } = useQuery({
@@ -87,9 +86,7 @@ const Packages = () => {
     setIsFormOpen(true)
   }
 
-  const handleViewDetails = (packageItem: Package) => {
-    setSelectedPackage(packageItem)
-  }
+  const handleViewDetails = (_packageItem: Package) => {}
 
   const handleCloseForm = () => {
     setIsFormOpen(false)
