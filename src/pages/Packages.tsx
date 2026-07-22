@@ -8,13 +8,14 @@ import { packageService } from '../services/packageService'
 import { CreatePackageInput } from '../schemas/package'
 import { queryClient } from '../lib/queryClient'
 import { customerService } from '../services/customerService'
+import { Package } from '../types/package'
 
 const Packages = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [filterStatus, setFilterStatus] = useState<string>('')
   const [isFormOpen, setIsFormOpen] = useState(false)
-  const [editingPackage, setEditingPackage] = useState(null)
-  const [selectedPackage, setSelectedPackage] = useState(null)
+  const [editingPackage, setEditingPackage] = useState<Package | null>(null)
+  const [_selectedPackage, setSelectedPackage] = useState<Package | null>(null)
 
   // Fetch packages with filters
   const { data: packages = [], isLoading } = useQuery({
@@ -81,7 +82,7 @@ const Packages = () => {
     }
   }
 
-  const handleEdit = (packageItem: any) => {
+  const handleEdit = (packageItem: Package) => {
     setEditingPackage(packageItem)
     setIsFormOpen(true)
   }
@@ -203,7 +204,7 @@ const Packages = () => {
           onSubmit={handleSubmit}
           onClose={handleCloseForm}
           isLoading={createMutation.isPending || updateMutation.isPending}
-          initialData={editingPackage}
+          initialData={editingPackage ?? undefined}
         />
       )}
     </MainLayout>
