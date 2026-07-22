@@ -1,4 +1,4 @@
-import { useForm, Controller } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useQuery } from '@tanstack/react-query'
 import { X } from 'lucide-react'
@@ -23,9 +23,7 @@ const PackageForm = ({
   const {
     register,
     handleSubmit,
-    control,
     formState: { errors },
-    watch,
   } = useForm<CreatePackageInput>({
     resolver: zodResolver(createPackageSchema),
     defaultValues: initialData
@@ -53,8 +51,6 @@ const PackageForm = ({
     queryFn: () => customerService.getCustomers(),
     staleTime: 1000 * 60 * 5,
   })
-
-  const insurance = watch('insurance')
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">

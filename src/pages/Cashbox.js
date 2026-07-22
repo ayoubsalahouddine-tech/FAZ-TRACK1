@@ -1,0 +1,6 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import MainLayout from '../layouts/MainLayout';
+const Cashbox = () => {
+    return (_jsx(MainLayout, { children: _jsxs("div", { children: [_jsxs("div", { className: "mb-8 flex items-center justify-between", children: [_jsx("h1", { className: "text-3xl font-bold text-gray-900", children: "Caisse" }), _jsx("button", { className: "rounded-lg bg-primary-700 px-4 py-2 text-white hover:bg-primary-800", children: "+ Nouvelle Transaction" })] }), _jsxs("div", { className: "grid gap-6 md:grid-cols-3", children: [_jsxs("div", { className: "rounded-lg bg-white p-6 shadow", children: [_jsx("h3", { className: "text-sm font-medium text-gray-600", children: "Solde Total" }), _jsx("p", { className: "mt-2 text-3xl font-bold text-gray-900", children: "0.00 DA" })] }), _jsxs("div", { className: "rounded-lg bg-white p-6 shadow", children: [_jsx("h3", { className: "text-sm font-medium text-gray-600", children: "Revenus" }), _jsx("p", { className: "mt-2 text-3xl font-bold text-green-600", children: "0.00 DA" })] }), _jsxs("div", { className: "rounded-lg bg-white p-6 shadow", children: [_jsx("h3", { className: "text-sm font-medium text-gray-600", children: "D\u00E9penses" }), _jsx("p", { className: "mt-2 text-3xl font-bold text-red-600", children: "0.00 DA" })] })] })] }) }));
+};
+export default Cashbox;
