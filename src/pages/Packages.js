@@ -13,7 +13,6 @@ const Packages = () => {
     const [filterStatus, setFilterStatus] = useState('');
     const [isFormOpen, setIsFormOpen] = useState(false);
     const [editingPackage, setEditingPackage] = useState(null);
-    const [, setSelectedPackage] = useState(null);
     // Fetch packages with filters
     const { data: packages = [], isLoading } = useQuery({
         queryKey: ['packages', searchTerm, filterStatus],
@@ -68,9 +67,7 @@ const Packages = () => {
         setEditingPackage(packageItem);
         setIsFormOpen(true);
     };
-    const handleViewDetails = (packageItem) => {
-        setSelectedPackage(packageItem);
-    };
+    const handleViewDetails = (_packageItem) => { };
     const handleCloseForm = () => {
         setIsFormOpen(false);
         setEditingPackage(null);
