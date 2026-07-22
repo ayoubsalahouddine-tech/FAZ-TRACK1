@@ -20,13 +20,13 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/clients" element={<Clients />} />
-          <Route path="/packages" element={<Packages />} />
-          <Route path="/trips" element={<Trips />} />
-          <Route path="/trucks" element={<Trucks />} />
-          <Route path="/drivers" element={<Drivers />} />
-          <Route path="/cashbox" element={<Cashbox />} />
-          <Route path="/reports" element={<Reports />} />
-          <Route path="/settings" element={<Settings />} />
+          <Route path="/colis" element={<Packages />} />
+          <Route path="/voyages" element={<Trips />} />
+          <Route path="/camions" element={<Trucks />} />
+          <Route path="/chauffeurs" element={<Drivers />} />
+          <Route path="/caisse" element={<Cashbox />} />
+          <Route path="/rapports" element={<Reports />} />
+          <Route path="/parametres" element={<Settings />} />
           <Route path="/" element={<Navigate to="/dashboard" />} />
         </Routes>
       </Router>

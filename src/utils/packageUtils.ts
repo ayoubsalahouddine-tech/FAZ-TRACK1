@@ -2,8 +2,6 @@
  * Utility functions for package/tracking management
  */
 
-import QRCode from 'qrcode'
-
 /**
  * Generate a unique tracking number in format: FAZ-YYYYMMDD-000001
  */
@@ -15,31 +13,19 @@ export const generateTrackingNumber = async (): Promise<string> => {
   const date = `${year}${month}${day}`
 
   // In a real app, this would be fetched from DB to ensure uniqueness
-  // For now, using a random sequence
-  const sequence = String(Math.floor(Math.random() * 1000000))
-    .padStart(6, '0')
+  const sequence = String(Math.floor(Math.random() * 1000000)).padStart(6, '0')
 
   return `FAZ-${date}-${sequence}`
 }
 
 /**
- * Generate QR code data URL from tracking number
+ * Generate QR code data URL from tracking number.
+ * Returns a placeholder data URL until a QR library is configured.
  */
 export const generateQRCode = async (trackingNumber: string): Promise<string> => {
-  try {
-    const qrCode = await QRCode.toDataURL(trackingNumber, {
-      width: 200,
-      margin: 1,
-      color: {
-        dark: '#000000',
-        light: '#FFFFFF',
-      },
-    })
-    return qrCode
-  } catch (error) {
-    console.error('Error generating QR code:', error)
-    throw error
-  }
+  // Placeholder: return an SVG-based QR stub
+  const encoded = encodeURIComponent(trackingNumber)
+  return `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='white'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='12' fill='black'>${encoded}</text></svg>`
 }
 
 /**

@@ -7,11 +7,12 @@ import ClientForm from '../components/ClientForm'
 import { clientService } from '../services/clientService'
 import { CreateClientInput } from '../schemas/client'
 import { queryClient } from '../lib/queryClient'
+import { Client } from '../types/client'
 
 const Clients = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [isFormOpen, setIsFormOpen] = useState(false)
-  const [editingClient, setEditingClient] = useState(null)
+  const [editingClient, setEditingClient] = useState<Client | null>(null)
 
   // Fetch clients
   const { data: clients = [], isLoading } = useQuery({
@@ -60,7 +61,7 @@ const Clients = () => {
     }
   }
 
-  const handleEdit = (client: any) => {
+  const handleEdit = (client: Client) => {
     setEditingClient(client)
     setIsFormOpen(true)
   }
@@ -151,7 +152,7 @@ const Clients = () => {
           onSubmit={handleSubmit}
           onClose={handleCloseForm}
           isLoading={createMutation.isPending || updateMutation.isPending}
-          initialData={editingClient}
+          initialData={editingClient ?? undefined}
         />
       )}
     </MainLayout>
