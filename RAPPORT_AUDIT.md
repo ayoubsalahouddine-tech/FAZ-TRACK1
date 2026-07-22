@@ -19,6 +19,7 @@
 
 ## Corrections appliquées
 - Alignement des dépendances React/TypeScript/Lucide, avec mise à niveau de `lucide-react` vers une version compatible React 19.
+- Mise à niveau de `vite`, `@vitejs/plugin-react` et `@typescript-eslint/*` vers des versions corrigées.
 - Suppression de la dépendance Supabase inutilisée et invalide.
 - Ajout de `eslint-plugin-react-refresh` compatible avec la version d'ESLint présente.
 - Ajout de `qrcode` et `@types/qrcode`.
@@ -40,6 +41,7 @@
 - `npm run type-check` ✅
 - `npm run build` ✅
 - `npm run lint` ✅
+- `npm audit` ✅
 
 ## Remarque
 - Le build Vite signale encore un bundle principal supérieur à 500 kB. Ce n'est pas bloquant pour le démarrage du projet, mais une optimisation par découpage de bundle pourra être faite plus tard.
