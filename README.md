@@ -13,7 +13,7 @@ Un système professionnel de gestion de transport et de logistique construit ave
 ```bash
 # Cloner le projet
 git clone https://github.com/ayoubsalahouddine-tech/FAZ-TRACK1.git
-cd FAZ-TRACK1/frontend
+cd FAZ-TRACK1
 
 # Installer les dépendances
 npm install
@@ -28,7 +28,7 @@ npm run dev
 
 L'application s'ouvrira automatiquement sur `http://localhost:5173`
 
-## 📦 Technologies Utilisées
+## 🛠 Technologies Utilisées
 
 - **React 19** - Framework UI moderne
 - **TypeScript** - Typage statique
@@ -45,8 +45,7 @@ L'application s'ouvrira automatiquement sur `http://localhost:5173`
 ## 📁 Structure du Projet
 
 ```
-frontend/
-├── index.html
+FAZ-TRACK1/
 ├── src/
 │   ├── components/          # Composants réutilisables
 │   │   ├── Sidebar.tsx
@@ -77,6 +76,17 @@ frontend/
 │   ├── assets/             # Images et ressources
 │   ├── App.tsx             # Composant principal
 │   └── main.tsx            # Point d'entrée
+├── database/
+│   └── schema.sql          # Schéma SQL Supabase
+├── docs/
+│   └── SETUP.md            # Guide d'installation
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+├── tailwind.config.js
+├── .eslintrc.cjs
+├── .prettierrc.json
+└── README.md
 ```
 
 ## 🎨 Thème
@@ -94,7 +104,7 @@ frontend/
 
 ## 📋 Pages de l'Application
 
-- **Login** - Authentification utilisateur
+- **Login** - Authentification utilisateur avec validation Zod
 - **Dashboard** - Vue d'ensemble et statistiques
 - **Clients** - Gestion des clients
 - **Colis** - Suivi des colis
@@ -139,6 +149,7 @@ VITE_SUPABASE_ANON_KEY=your_key
 - [React Router](https://reactrouter.com)
 - [TanStack Query](https://tanstack.com/query)
 - [Supabase Docs](https://supabase.com/docs)
+- [Guide de Configuration](./docs/SETUP.md)
 
 ## 🤝 Contribution
 

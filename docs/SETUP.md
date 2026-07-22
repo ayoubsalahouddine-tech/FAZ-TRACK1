@@ -8,9 +8,8 @@ git clone https://github.com/ayoubsalahouddine-tech/FAZ-TRACK1.git
 cd FAZ-TRACK1
 ```
 
-### 2. Installation du Frontend
+### 2. Installation des Dépendances
 ```bash
-cd frontend
 npm install
 ```
 
@@ -37,7 +36,6 @@ VITE_SUPABASE_ANON_KEY=your_anon_key
 ## Démarrage du Projet
 
 ```bash
-cd frontend
 npm run dev
 ```
 
@@ -51,14 +49,24 @@ L'application s'ouvrira sur `http://localhost:5173`
 | `VITE_SUPABASE_ANON_KEY` | Clé anonyme Supabase | eyJxxx... |
 | `VITE_API_URL` | URL de l'API backend | http://localhost:3000 |
 
-## Déploiement
+## Scripts Disponibles
 
-### Préparation
 ```bash
-npm run build
-npm run type-check
-npm run lint
+# Développement
+npm run dev          # Démarrer le serveur de dev
+
+# Production
+npm run build        # Build pour la production
+npm run preview      # Prévisualiser le build
+
+# Qualité du Code
+npm run lint         # Vérifier les erreurs
+npm run lint:fix     # Corriger automatiquement
+npm run format       # Formater le code
+npm run type-check   # Vérifier les types TypeScript
 ```
+
+## Déploiement
 
 ### Sur Vercel
 1. Push sur GitHub
