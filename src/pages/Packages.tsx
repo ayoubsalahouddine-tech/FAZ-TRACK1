@@ -15,7 +15,6 @@ const Packages = () => {
   const [filterStatus, setFilterStatus] = useState<string>('')
   const [isFormOpen, setIsFormOpen] = useState(false)
   const [editingPackage, setEditingPackage] = useState<Package | null>(null)
-  const [_selectedPackage, setSelectedPackage] = useState<Package | null>(null)
 
   // Fetch packages with filters
   const { data: packages = [], isLoading } = useQuery({
@@ -194,7 +193,7 @@ const Packages = () => {
           isLoading={isLoading}
           onEdit={handleEdit}
           onDelete={(id) => deleteMutation.mutate(id)}
-          onViewDetails={setSelectedPackage}
+          onViewDetails={() => {}}
         />
       </div>
 
