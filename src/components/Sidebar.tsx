@@ -21,13 +21,13 @@ const Sidebar = () => {
   const menuItems = [
     { icon: LayoutDashboard, label: 'Tableau de Bord', path: '/dashboard' },
     { icon: Users, label: 'Clients', path: '/clients' },
-    { icon: Package, label: 'Colis', path: '/packages' },
-    { icon: Navigation, label: 'Voyages', path: '/trips' },
-    { icon: Truck, label: 'Camions', path: '/trucks' },
-    { icon: Users, label: 'Chauffeurs', path: '/drivers' },
-    { icon: DollarSign, label: 'Caisse', path: '/cashbox' },
-    { icon: BarChart3, label: 'Rapports', path: '/reports' },
-    { icon: Settings, label: 'Paramètres', path: '/settings' },
+    { icon: Package, label: 'Colis', path: '/colis' },
+    { icon: Navigation, label: 'Voyages', path: '/voyages' },
+    { icon: Truck, label: 'Camions', path: '/camions' },
+    { icon: Users, label: 'Chauffeurs', path: '/chauffeurs' },
+    { icon: DollarSign, label: 'Caisse', path: '/caisse' },
+    { icon: BarChart3, label: 'Rapports', path: '/rapports' },
+    { icon: Settings, label: 'Paramètres', path: '/parametres' },
   ]
 
   const isActive = (path: string) => location.pathname === path
