@@ -7,13 +7,14 @@ import CustomerForm from '../components/CustomerForm'
 import { customerService } from '../services/customerService'
 import { CreateCustomerInput } from '../schemas/customer'
 import { queryClient } from '../lib/queryClient'
+import { Customer } from '../types/customer'
 
 const Customers = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [filterStatus, setFilterStatus] = useState<string>('')
   const [filterType, setFilterType] = useState<string>('')
   const [isFormOpen, setIsFormOpen] = useState(false)
-  const [editingCustomer, setEditingCustomer] = useState(null)
+  const [editingCustomer, setEditingCustomer] = useState<Customer | undefined>(undefined)
 
   // Fetch customers with filters
   const { data: customers = [], isLoading } = useQuery({
@@ -34,7 +35,7 @@ const Customers = () => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['customers'] })
       setIsFormOpen(false)
-      setEditingCustomer(null)
+      setEditingCustomer(undefined)
     },
   })
 
@@ -45,7 +46,7 @@ const Customers = () => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['customers'] })
       setIsFormOpen(false)
-      setEditingCustomer(null)
+      setEditingCustomer(undefined)
     },
   })
 
@@ -68,18 +69,18 @@ const Customers = () => {
     }
   }
 
-  const handleEdit = (customer: any) => {
+  const handleEdit = (customer: Customer) => {
     setEditingCustomer(customer)
     setIsFormOpen(true)
   }
 
   const handleCloseForm = () => {
     setIsFormOpen(false)
-    setEditingCustomer(null)
+    setEditingCustomer(undefined)
   }
 
   const handleOpenForm = () => {
-    setEditingCustomer(null)
+    setEditingCustomer(undefined)
     setIsFormOpen(true)
   }
 

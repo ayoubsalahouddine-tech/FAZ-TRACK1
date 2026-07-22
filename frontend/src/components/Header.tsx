@@ -1,4 +1,4 @@
-import { Bell, User, ChevronDown } from 'lucide-react'
+import { Bell, ChevronDown } from 'lucide-react'
 
 const Header = () => {
   return (
