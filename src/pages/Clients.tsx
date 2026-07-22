@@ -7,11 +7,12 @@ import ClientForm from '../components/ClientForm'
 import { clientService } from '../services/clientService'
 import { CreateClientInput } from '../schemas/client'
 import { queryClient } from '../lib/queryClient'
+import { Client } from '../types/client'
 
 const Clients = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [isFormOpen, setIsFormOpen] = useState(false)
-  const [editingClient, setEditingClient] = useState(null)
+  const [editingClient, setEditingClient] = useState<Client | undefined>(undefined)
 
   // Fetch clients
   const { data: clients = [], isLoading } = useQuery({
@@ -26,7 +27,7 @@ const Clients = () => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['clients'] })
       setIsFormOpen(false)
-      setEditingClient(null)
+      setEditingClient(undefined)
     },
   })
 
@@ -37,7 +38,7 @@ const Clients = () => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['clients'] })
       setIsFormOpen(false)
-      setEditingClient(null)
+      setEditingClient(undefined)
     },
   })
 
@@ -60,18 +61,18 @@ const Clients = () => {
     }
   }
 
-  const handleEdit = (client: any) => {
+  const handleEdit = (client: Client) => {
     setEditingClient(client)
     setIsFormOpen(true)
   }
 
   const handleCloseForm = () => {
     setIsFormOpen(false)
-    setEditingClient(null)
+    setEditingClient(undefined)
   }
 
   const handleOpenForm = () => {
-    setEditingClient(null)
+    setEditingClient(undefined)
     setIsFormOpen(true)
   }
 
