@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Eye, Edit2, Trash2, Copy } from 'lucide-react'
+import { Edit2, Trash2, Copy } from 'lucide-react'
 import { Package } from '../types/package'
 import {
   getStatusLabel,
@@ -13,7 +13,6 @@ interface PackageListProps {
   isLoading?: boolean
   onEdit: (packageItem: Package) => void
   onDelete: (id: string) => void
-  onViewDetails: (packageItem: Package) => void
 }
 
 const PackageList = ({
@@ -22,7 +21,6 @@ const PackageList = ({
   isLoading = false,
   onEdit,
   onDelete,
-  onViewDetails,
 }: PackageListProps) => {
   const [copiedId, setCopiedId] = useState<string | null>(null)
 
@@ -147,13 +145,6 @@ const PackageList = ({
 
             {/* Right: Action Buttons */}
             <div className="flex gap-2">
-              <button
-                onClick={() => onViewDetails(packageItem)}
-                className="rounded-lg bg-green-100 p-2 text-green-700 hover:bg-green-200"
-                title="Voir les détails"
-              >
-                <Eye size={18} />
-              </button>
               <button
                 onClick={() => onEdit(packageItem)}
                 className="rounded-lg bg-blue-100 p-2 text-blue-700 hover:bg-blue-200"

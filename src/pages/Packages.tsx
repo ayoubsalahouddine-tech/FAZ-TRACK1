@@ -86,8 +86,6 @@ const Packages = () => {
     setIsFormOpen(true)
   }
 
-  const handleViewDetails = (_packageItem: Package) => {}
-
   const handleCloseForm = () => {
     setIsFormOpen(false)
     setEditingPackage(null)
@@ -195,7 +193,6 @@ const Packages = () => {
           isLoading={isLoading}
           onEdit={handleEdit}
           onDelete={(id) => deleteMutation.mutate(id)}
-          onViewDetails={handleViewDetails}
         />
       </div>
 
